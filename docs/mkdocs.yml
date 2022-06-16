@@ -5,7 +5,7 @@ site_description: >-
   A free and open-source application that emulates the original Microsoft
   Xbox game console, enabling people to play their original Xbox games on
   Windows, macOS, and Linux systems.
-copyright: Copyright &copy; 2020 - 2021 xemu Project
+copyright: Copyright &copy; 2020 - 2022 xemu Project
 
 extra_css:
   - stylesheets/extra.css
@@ -13,8 +13,8 @@ theme:
   name: material
   custom_dir: overrides
   features:
-    - navigation.expand
     - navigation.sections
+    - navigation.instant
   # Don't include MkDocs' JavaScript
   include_search_page: false
   search_index_only: true
@@ -62,17 +62,19 @@ markdown_extensions:
       repo: mkdocs-material
   - pymdownx.mark
   - pymdownx.smartsymbols
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
-  - pymdownx.tabbed
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
 
 nav:
+  - Home: https://xemu.app
+  - Compatibility: https://xemu.app/#compatibility
+  - Documentation: /docs/
+  - GitHub: https://github.com/mborgerson/xemu
+  - Patreon: https://www.patreon.com/mborgerson
   - About: about.md
   - FAQ: faq.md
   - Setup:
@@ -89,8 +91,11 @@ nav:
     - Snapshots (Save States): snapshots.md
   - Advanced Topics:
     - EEPROM Settings: eeprom.md
-    - Building from Source: building-from-source.md
     - Serial Port: serial-port.md
+    - Memory Units (Cards): xmus.md
+    - Development:
+      - Welcome: dev/index.md
+      - Building from Source: dev/building-from-source.md
 
 plugins:
   - search
